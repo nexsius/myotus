@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [ "$1" = "--list" ]; then
-    APPIP=`terraform output app_external_ip`
-    DBIP=`terraform output db_external_ip`
+    APPIP=`cd ../terraform && terraform output app_external_ip`
+    DBIP=`cd ../terraform && terraform output db_external_ip`
     cat << _EOF_
     {
         "_meta": {
